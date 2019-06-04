@@ -38,6 +38,10 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <ul>
+        <li th:each ="job : ${jobs}" th:text="${job}"></li>
+    </ul>
+    <p th:unless="${jobs} and ${jobs.size()}">no results :(</p>
 </div>
 
 </body>
