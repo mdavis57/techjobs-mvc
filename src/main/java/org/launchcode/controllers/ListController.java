@@ -57,8 +57,10 @@ public class ListController {
             @RequestParam String column, @RequestParam String value) {
 
         ArrayList<HashMap<String, String>> jobs = JobData.findByColumnAndValue(column, value);
+        String result = jobs.size() + " Result(s)";
         model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
         model.addAttribute("jobs", jobs);
+        model.addAttribute("result", result);
 
         return "list-jobs";
     }
